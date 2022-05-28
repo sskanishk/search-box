@@ -1,9 +1,11 @@
+import SearchBox from "./components/SearchBox"
+
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <SearchBox />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
