@@ -1,7 +1,7 @@
 # Search Box
 
 This is a simple search filter build in react which show the result based matched data field. 
-It is designed by keeping web accessibility in mind where user can navigate via result view using key up down key.
+It is designed by keeping web accessibility in mind where user can navigate result view using keyboard up down key.
 
 ## Deveopment Setup
 ```
