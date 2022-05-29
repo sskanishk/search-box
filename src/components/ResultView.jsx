@@ -16,7 +16,7 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
     }, [data])
 
 
-    function onKeyDown(event) {
+    const onKeyDown = (event) => {
 
         const isInputFocused = document.activeElement === inputRef.current
         const resultItems = Array.from(resultRef.current.children)
@@ -50,7 +50,7 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
         }
     }
 
-    function onMouseMove(sadf) {
+    const onMouseMove = () => {
         inputRef.current.focus()
     }
 
