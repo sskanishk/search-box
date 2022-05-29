@@ -1,9 +1,9 @@
-import SearchBox from "./components/SearchBox"
+import SearchWrapper from "./components/SearchWrapper"
 
 function App() {
   return (
     <div className="App">
-      <SearchBox />
+      <SearchWrapper />
     </div>
   )
 }

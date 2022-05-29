@@ -1,9 +1,6 @@
-.wrapper {
+.searchbox__wrapper {
     max-width: 450px;
-    margin: 150px auto;
-}
-
-.wrapper .search-input {
+    margin: 100px auto;
     position: relative;
     background-color: #fff;
     width: 100%;
@@ -11,7 +8,7 @@
     box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
 }
 
-.wrapper .search-input input {
+.search_input__wrapper>input {
     width: 100%;
     height: 55px;
     border: none;
@@ -22,45 +19,68 @@
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .search-input .icon {
-    height: 55px;
-    width: 55px;
-    line-height: 55px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-align: center;
-    font-size: 20px;
-    color: #644bff;
-    cursor: pointer;
-}
 
-.search-input .autocom-box {
-    padding: 0;
-    max-height: 280px;
+.result__container {
+    /* padding: 0; */
+    max-height: 480px;
     overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.search-input.active .autocom-box {
+    /* opacity: 0; */
+    /* pointer-events: none; */
     padding: 10px 8px;
     opacity: 1;
     pointer-events: auto;
+    background-color: white;
+    border-radius: 5px;
+    /* display: ${(props) => props.data.length > 0 ? 'block' : 'none'} */
 }
 
-.autocom-box li {
+.result__container > li {
     list-style-type: none;
     padding: 10px 12px;
     width: 100%;
     border-radius: 3px;
-    display: none;
+    border: 0.3px solid lightgray;
+    margin: 5px 0px;
 }
 
-.search-input.active .autocom-box li {
-    display: block;
+.hight_item_ {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
 }
 
-.autocom-box li:hover {
-    background-color: #efefef;
+.result__container > li > a {
+    pointer-events: none;
+}
+
+.hight_item:hover, li:hover {
+    background-color: #efefef
+}
+
+.hight_item:focus-within, li:focus-within {
+    background-color: #efefef
+}
+
+.hight_item > p {
+    color: black;
+    font-size: 14px;
+
+}
+
+.no_result__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.result_card_fields {
+    display: flex;
+    align-items: center;
+}
+
+.result_card_fields > p {
+    font-size: 14px;
+    color: black;
+    line-height: 20px;
 }

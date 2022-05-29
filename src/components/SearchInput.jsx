@@ -1,45 +1,30 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 import styled from 'styled-components'
 
 
-function SearchInput({ searchHandler }) {
-    const ref = useRef(null)
-    let manualFocus = true
+function SearchInput({ searchHandler, inputRef }) {
 
     useEffect(() => {
         setFocus()
-    },[])
+    }, [])
 
     const setFocus = () => {
-        manualFocus = false
-        ref?.current && ref.current.focus()
-        manualFocus = true
+        inputRef?.current && inputRef.current.focus()
     }
-
 
     return (
-        <StyledSearchInput>
-            <input 
-                ref={ref}
-                type='text'
+        <div className="search_input__wrapper">
+            <input
+                placeholder='Search user by name, address, id, pincode'
+                ref={inputRef}
+                autoComplete='off'
+                type='search'
+                name='query'
                 onChange={(e) => searchHandler(e.target.value.toLowerCase())}
             />
-        </StyledSearchInput>
+        </div>
     )
 }
-
-const StyledSearchInput = styled.div`
-    > input {
-        width: 100%;
-        height: 55px;
-        border: none;
-        outline: none;
-        border-radius: 5px;
-        padding: 0 60px 0 20px;
-        font-size: 18px;
-        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    }
-`
 
 export default SearchInput
