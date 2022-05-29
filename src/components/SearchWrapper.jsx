@@ -27,11 +27,11 @@ function SearchBox() {
     }
 
     const filterdData = apidata.filter((item) => {
-        const { id, name, address, pincode } = item
+        const { id, name, address, pincode, items } = item
         if (query.length <= 0) {
             return []
         } else {
-            let result = name.toLowerCase().indexOf(query) >= 0 || id.toLowerCase().indexOf(query) >= 0 || address.toLowerCase().indexOf(query) >= 0 || pincode.toLowerCase().indexOf(query) >= 0
+            let result = name.toLowerCase().indexOf(query) >= 0 || id.toLowerCase().indexOf(query) >= 0 || address.toLowerCase().indexOf(query) >= 0 || pincode.toLowerCase().indexOf(query) >= 0 || items.join(', ').toLowerCase().indexOf(query) >= 0 
             return result
         }
     })

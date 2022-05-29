@@ -65,18 +65,13 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
     }
 
     const style = {
-        id: {
-            fontSize: '16px',
-            fontWeight: '500',
-            color: 'black'
-        },
         name: {
             fontSize: '16px',
             padding: '5px 0px',
             fontStyle: 'italic',
             color: 'black'
         },
-        address: {
+        result_options: {
             color: 'gray',
             fontSize: '14px'
         }
@@ -89,25 +84,25 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
                     data.map((val, index) => {
                         return (
                             <li key={`${val.url}${index}`}>
-                                <a href="#" key={val.url}>
+                                <a href="#/" key={val.url}>
                                     <div className='hight_item'>    
                                         <div className='hight_item_'>
                                             {getHighlightedText(val.name, highlight, val.id, style.name)}
                                             <div className='result_card_fields'>
-                                                <p>Id: &nbsp; </p>{getHighlightedText(val.id, highlight, val.id, style.address)} 
+                                                <p>Id: &nbsp; </p>{getHighlightedText(val.id, highlight, val.id, style.result_options)} 
                                             </div>
                                         </div>
                                         
                                         <div className='result_card_fields'>
-                                            <p>Address: &nbsp; </p>{getHighlightedText(val.address, highlight, val.id, style.address)} 
+                                            <p>Address: &nbsp; </p>{getHighlightedText(val.address, highlight, val.id, style.result_options)} 
                                         </div>
                                         <div className='result_card_fields'>
                                             <p>Pincode: &nbsp; </p>
-                                            {getHighlightedText(val.pincode, highlight, val.id, style.address)}
+                                            {getHighlightedText(val.pincode, highlight, val.id, style.result_options)}
                                         </div>
                                         <div className='result_card_fields'>
                                             <p>Items: &nbsp; </p>
-                                            {getHighlightedText(val.items.join(', '), highlight, val.id, style.address)}
+                                            {getHighlightedText(val.items.join(', '), highlight, val.id, style.result_options)}
                                         </div>
                                     </div>
                                 </a>
