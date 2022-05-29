@@ -12,6 +12,7 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
         }
         return () => {
             document.body.removeEventListener('keydown', onKeyDown)
+            document.body.removeEventListener('mousemove', onMouseMove)
         }
     }, [data])
 
@@ -85,8 +86,8 @@ function ResultView({ data, highlight, resultRef, inputRef }) {
                         return (
                             <li key={`${val.url}${index}`}>
                                 <a href="#/" key={val.url}>
-                                    <div className='hight_item'>    
-                                        <div className='hight_item_'>
+                                    <div className='result_card__wrapper'>    
+                                        <div className='result_card__name'>
                                             {getHighlightedText(val.name, highlight, val.id, style.name)}
                                             <div className='result_card_fields'>
                                                 <p>Id: &nbsp; </p>{getHighlightedText(val.id, highlight, val.id, style.result_options)} 

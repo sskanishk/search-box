@@ -43,7 +43,7 @@
     margin: 5px 0px;
 }
 
-.hight_item_ {
+.result_card__name {
     display: flex;
     justify-content: space-between;
     align-items: center
@@ -53,15 +53,15 @@
     pointer-events: none;
 }
 
-.hight_item:hover, li:hover {
+.result_card__wrapper:hover, li:hover {
     background-color: #efefef
 }
 
-.hight_item:focus-within, li:focus-within {
+.result_card__wrapper:focus-within, li:focus-within {
     background-color: #efefef
 }
 
-.hight_item > p {
+.result_card__wrapper > p {
     color: black;
     font-size: 14px;
 
